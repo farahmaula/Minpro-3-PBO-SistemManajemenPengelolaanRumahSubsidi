@@ -701,7 +701,36 @@ public class ManajemenData {
                     System.out.println("Pengajuan belum disetujui.");
                     return;
                 }
+                
+                if (pengajuan.getMetodePembayaran() != null
+                    && !pengajuan.getMetodePembayaran()
+                    .equalsIgnoreCase("Belum Ada")
+                    && !pengajuan.getMetodePembayaran().isEmpty()
+                    && pengajuan.getJumlahBayar() > 0) {
 
+
+                System.out.println(
+                "Pembayaran sudah dilakukan."
+                );
+
+
+                System.out.println(
+                "Metode Pembayaran : "
+                + pengajuan.getMetodePembayaran()
+                );
+
+
+                System.out.println(
+                "Jumlah Bayar : Rp. "
+                + pengajuan.getJumlahBayar()
+                );
+
+
+                return;
+
+            }
+
+                
                 System.out.println("Metode Pembayaran:");
                 System.out.println("1. Cash");
                 System.out.println("2. Cicilan");
@@ -731,6 +760,7 @@ public class ManajemenData {
                     pengajuan.setJumlahBayar(jumlah);
                     System.out.println("Pembayaran cash berhasil disimpan.");
                 }
+                
                 else if (pilihan.equals("2")) {
                     Pembeli pembeliDipilih = null;
 
@@ -753,7 +783,7 @@ public class ManajemenData {
                     System.out.println("Penghasilan Pembeli : Rp. " + pembeliDipilih.getPenghasilan());
                     System.out.println("Persentase Cicilan  : 30%");
                     System.out.println("Cicilan Per Bulan   : Rp. " +  cicilan);
-                    return;
+
                 }
                 else {
                     System.out.println("Pilihan metode pembayaran tidak valid.");

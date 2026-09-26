@@ -15,7 +15,7 @@ public class Pembeli {
     private String noHP;
     private String statusPunyaRumah;
 
-    public Pembeli(String nik, String nama, double penghasilan, String noHP, String statusPunyaRumah) {
+    public Pembeli(String nik, String nama, double penghasilan, String noHP, String statusPunyaRumah){
         this.nik = nik;
         this.nama = nama;
         this.penghasilan = penghasilan;
