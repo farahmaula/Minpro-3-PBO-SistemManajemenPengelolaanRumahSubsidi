@@ -9,10 +9,10 @@ import java.util.Scanner;
 import model.Rumah;
 import model.RumahTersedia;
 import model.RumahTerjual;
-import model.Rumah;
 import model.Pembeli;
 import model.Pengajuan;
 import model.Dokumen;
+import model.DapatSurvey;
 
 /**
  *
@@ -21,10 +21,10 @@ import model.Dokumen;
 public class ManajemenData {
     Scanner input = new Scanner(System.in);
     private ValidasiInput validasi = new ValidasiInput();
-    ArrayList<Rumah> daftarRumah = new ArrayList<>();
-    ArrayList<Pembeli> daftarPembeli = new ArrayList<>();
-    ArrayList<Pengajuan> daftarPengajuan = new ArrayList<>();
-    ArrayList<Dokumen> daftarDokumen = new ArrayList<>();
+    private ArrayList<Rumah> daftarRumah = new ArrayList<>();
+    private ArrayList<Pembeli> daftarPembeli = new ArrayList<>();
+    private ArrayList<Pengajuan> daftarPengajuan = new ArrayList<>();
+    private ArrayList<Dokumen> daftarDokumen = new ArrayList<>();
     
     public ManajemenData() {
         RumahTersedia rumahDummy = new RumahTersedia(
@@ -73,8 +73,7 @@ public class ManajemenData {
             System.out.println("4. Hapus Rumah");
             System.out.println("0. Kembali");
             System.out.print("Pilih menu: ");
-            pilihan = input.nextInt();
-            input.nextLine();
+            pilihan = validasi.bacaPilihan(input,0,4);
 
             switch (pilihan) {
                 case 1:
@@ -144,24 +143,12 @@ public class ManajemenData {
         System.out.println("Contoh Harga : 1000000");
         System.out.println("=======================\n");
         System.out.print("Harga: ");
-        double harga = input.nextDouble();
-        input.nextLine();
-
-        if (harga <= 0) {
-            System.out.println("Harga tidak valid.");
-            return;
-        }
+        double harga = validasi.bacaDoublePositif(input);
         
         System.out.println("Contoh Jumlah Unit : 10");
         System.out.println("========================\n");
         System.out.print("Jumlah Unit: ");
-        int jumlahUnit = input.nextInt();
-        input.nextLine();
-
-        if (jumlahUnit <= 0) {
-            System.out.println("Jumlah unit harus lebih dari 0.");
-            return;
-        }
+        int jumlahUnit = validasi.bacaIntPositif(input);
         
         System.out.println("Contoh Blok Rumah : Blok Mawar");
         System.out.println("=======================\n");
@@ -191,6 +178,9 @@ public class ManajemenData {
         for (Rumah rumah : daftarRumah) {
             System.out.println("\n==== Rumah Subsidi ====");            
             rumah.tampilkanData();
+             if (rumah instanceof DapatSurvey) {
+                ((DapatSurvey) rumah).survey();
+             }
             System.out.println("=========================");
         }
     }
@@ -229,13 +219,7 @@ public class ManajemenData {
                 System.out.println("Contoh Harga : 2000000");
                 System.out.println("=======================\n");
                 System.out.print("Harga Baru: ");
-                double harga = input.nextDouble();
-                input.nextLine();
-
-                if (harga <= 0) {
-                    System.out.println("Harga tidak valid.");
-                    return;
-                }
+                double harga = validasi.bacaDoublePositif(input);
 
                 rumah.setUnit(unit);
                 rumah.setTipeRumah(tipe);
@@ -280,8 +264,7 @@ public class ManajemenData {
             System.out.println("4. Hapus Pembeli");
             System.out.println("0. Kembali");
             System.out.print("Pilih menu: ");
-            pilihan = input.nextInt();
-            input.nextLine();
+            pilihan = validasi.bacaPilihan(input,0,4);
 
             switch (pilihan) {
                 case 1:
@@ -326,11 +309,6 @@ public class ManajemenData {
             }
         }
 
-        if (nik.length() != 16) {
-            System.out.println("NIK harus 16 digit.");
-            return;
-        }
-
         System.out.println("Contoh Nama : Anggita Melastri");
         System.out.println("===============================\n");
         System.out.print("Nama: ");
@@ -344,10 +322,6 @@ public class ManajemenData {
         System.out.println("=======================\n");
         System.out.print("Penghasilan: ");
         String inputPenghasilan = input.nextLine();
-        if (!validasi.isAngkaPositif(inputPenghasilan)) {
-            System.out.println("Penghasilan berupa angka dan lebih dari 0");
-            return;
-        }
         double penghasilan = Double.parseDouble(inputPenghasilan);
         
         System.out.println("Contoh No HP: 085612789355");
@@ -363,8 +337,8 @@ public class ManajemenData {
         System.out.println("1. Ya");
         System.out.println("2. Tidak");
         System.out.print("Pilih: ");
-        int pilihan = input.nextInt();
-        input.nextLine();
+        int pilihan = validasi.bacaPilihan(input,1,2);
+
         String statusRumah;
 
         if (pilihan == 1) {
@@ -411,12 +385,7 @@ public class ManajemenData {
                 System.out.println("Contoh Penghasilan : 2000000");
                 System.out.println("=======================\n");
                 System.out.print("Penghasilan Baru: ");
-                double penghasilan = input.nextDouble();
-                input.nextLine();
-                if (!validasi.isAngkaPositif(penghasilan)) {
-                    System.out.println("Penghasilan berupa angka dan lebih dari 0");
-                    return;
-                }
+                double penghasilan = validasi.bacaDoublePositif(input);
                 
                 System.out.println("Contoh No HP : 085612789355");
                 System.out.println("=======================\n");
@@ -470,8 +439,8 @@ public class ManajemenData {
             System.out.println("5. Hapus Pengajuan");
             System.out.println("0. Kembali");
             System.out.print("Pilih menu: ");
-            pilihan = input.nextInt();
-            input.nextLine();
+            pilihan = validasi.bacaPilihan(input, 0, 5);
+
             switch (pilihan) {
                 case 1:
                     tambahPengajuan();
@@ -735,33 +704,20 @@ public class ManajemenData {
                 System.out.println("1. Cash");
                 System.out.println("2. Cicilan");
                 System.out.print("Pilih: ");
-                String pilihan = input.nextLine();
-                if (!validasi.isPilihanValid(pilihan)){
-                    System.out.println("Pilihan berupa angka");
-                    return;
-                }
+                int pilihan = validasi.bacaPilihan(input, 1, 2);
 
-                if (pilihan.equals("1")) {
+
+                if (pilihan == 1) {
                     System.out.println("Contoh : 1000000");
                     System.out.print("Jumlah Bayar: ");
-                    double jumlah = input.nextDouble();
-                    input.nextLine();
-                    if (!validasi.isAngkaPositif(jumlah)){
-                        System.out.println("Harus lebih dari 0");
-                        return;
-                    }
-
-                    if (jumlah <= 0) {
-                        System.out.println("Jumlah pembayaran tidak valid.");
-                        return;
-                    }
+                    double jumlah = validasi.bacaDoublePositif(input);
 
                     pengajuan.setMetodePembayaran("Cash");
                     pengajuan.setJumlahBayar(jumlah);
                     System.out.println("Pembayaran cash berhasil disimpan.");
                 }
                 
-                else if (pilihan.equals("2")) {
+                else if (pilihan == 2) {
                     Pembeli pembeliDipilih = null;
 
                     for (Pembeli pembeli : daftarPembeli) {
@@ -824,7 +780,7 @@ public class ManajemenData {
         System.out.println("=======================\n");
         System.out.print("Masukkan ID Pengajuan: ");
         String id = input.nextLine();
-        if (validasi.isIdPengajuanValid(id)){
+        if (!validasi.isIdPengajuanValid(id)){
             System.out.println("Sesuaikan Format ID Dokumen Seperti Contoh");
             return;
         }
@@ -852,8 +808,7 @@ public class ManajemenData {
             System.out.println("4. Hapus Dokumen");
             System.out.println("0. Kembali");
             System.out.print("Pilih menu: ");
-            pilihan = input.nextInt();
-            input.nextLine();
+            pilihan = validasi.bacaPilihan(input,0,4);
 
             switch (pilihan) {
                 case 1:
@@ -924,8 +879,8 @@ public class ManajemenData {
         System.out.println("1. KTP");
         System.out.println("2. Surat Keterangan Belum Memiliki Rumah");
         System.out.print("Pilih: ");
-        int pilihan = input.nextInt();
-        input.nextLine();
+        int pilihan = validasi.bacaPilihan(input, 1, 2);
+
         String jenis;
         switch (pilihan) {
             case 1:

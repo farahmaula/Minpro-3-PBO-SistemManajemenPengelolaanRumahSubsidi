@@ -7,4 +7,5 @@ model\RumahTerjual.class
 model\Dokumen.class
 model\RumahTersedia.class
 main\Main.class
+model\DapatSurvey.class
 model\Pembeli.class

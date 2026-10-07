@@ -8,7 +8,7 @@ package model;
  *
  * @author ACER
  */
-public class Rumah {
+public abstract class Rumah {
     private final String idRumah;
     private String unit;
     private String tipeRumah;
@@ -48,6 +48,8 @@ public class Rumah {
     public void setHarga(double harga) {
         this.harga = harga;
     }
+    
+    public abstract String getStatusRumah();
 
     public void tampilkanData() {
         System.out.println("ID Rumah      : " + this.idRumah);
@@ -56,7 +58,12 @@ public class Rumah {
         System.out.println("Harga         : Rp. " + this.harga);
     }
     
+    //Overloading
     public final void cetakDataRumah () {
         System.out.println("Data Rumah Tersimpan");
+    }
+    
+    public final void cetakDataRumah(String keterangan) {
+        System.out.println("Data Rumah: " + keterangan);
     }
 }

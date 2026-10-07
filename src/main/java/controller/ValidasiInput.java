@@ -4,6 +4,8 @@
  */
 package controller;
 
+import java.util.Scanner;
+
 /**
  *
  * @author ACER
@@ -139,5 +141,88 @@ public class ValidasiInput {
     // Overload method jika parameter yang dikirim sudah berupa double
     public boolean isAngkaPositif(double nilai) {
         return nilai > 0;
+    }
+    
+    // ERROR HANDLING INPUT ANGKA
+    // Membaca input integer dengan validasi
+    public int bacaInt(Scanner input) {
+
+        while (true) {
+
+            String teks = input.nextLine();
+
+            if (isAngka(teks)) {
+                return Integer.parseInt(teks.trim());
+            }
+
+            System.out.print(
+                "Input harus berupa angka bulat. "
+                + "Silakan masukkan lagi: "
+            );
+        }
+    }
+
+    // Membaca integer yang harus lebih dari 0
+    public int bacaIntPositif(Scanner input) {
+
+        while (true) {
+
+            String teks = input.nextLine();
+
+            if (isAngka(teks)) {
+
+                int nilai = Integer.parseInt(teks.trim());
+
+                if (nilai > 0) {
+                    return nilai;
+                }
+            }
+
+            System.out.print(
+                "Input harus berupa angka lebih dari 0. "
+                + "Silakan masukkan lagi: "
+            );
+        }
+    }
+
+    // Membaca double yang harus lebih dari 0
+    public double bacaDoublePositif(Scanner input) {
+
+        while (true) {
+
+            String teks = input.nextLine();
+
+            if (isAngkaPositif(teks)) {
+                return Double.parseDouble(teks.trim());
+            }
+
+            System.out.print(
+                "Input harus berupa angka lebih dari 0. "
+                + "Silakan masukkan lagi: "
+            );
+        }
+    }
+
+    // Membaca pilihan tertentu, misalnya 1 sampai 2
+    public int bacaPilihan(Scanner input, int min, int max) {
+
+        while (true) {
+
+            String teks = input.nextLine();
+
+            if (isAngka(teks)) {
+
+                int pilihan = Integer.parseInt(teks.trim());
+
+                if (pilihan >= min && pilihan <= max) {
+                    return pilihan;
+                }
+            }
+
+            System.out.print(
+                "Pilihan tidak valid. "
+                + "Masukkan angka " + min + " sampai " + max + ": "
+            );
+        }
     }
 }

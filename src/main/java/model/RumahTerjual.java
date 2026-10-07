@@ -8,7 +8,7 @@ package model;
  *
  * @author ACER
  */
-public class RumahTerjual extends Rumah{
+public class RumahTerjual extends Rumah {
     private String tanggalJual;
     
     public RumahTerjual(String idRumah, String unit, String tipeRumah, double harga, String tanggalJual){
@@ -25,11 +25,17 @@ public class RumahTerjual extends Rumah{
         this.tanggalJual = tanggalJual;
     }
     
+    @Override 
+    public String getStatusRumah() {
+        return "Terjual";
+    }
+    
     @Override
     public void tampilkanData() {
         super.tampilkanData();
-        System.out.println("Jumlah Unit Rumah     : " + tanggalJual);
-        cetakDataRumah();
+        System.out.println("Tanggal Jual : " + tanggalJual);
+        System.out.println("Status       : " + getStatusRumah());
+        cetakDataRumah("Rumah Sudah Terjual");
     }
     
 }

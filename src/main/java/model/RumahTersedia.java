@@ -8,7 +8,7 @@ package model;
  *
  * @author ACER
  */
-public class RumahTersedia extends Rumah {
+public class RumahTersedia extends Rumah implements DapatSurvey {
     private int jumlahUnit;
     private String blokRumah;
     
@@ -45,8 +45,17 @@ public class RumahTersedia extends Rumah {
         super.tampilkanData();
         System.out.println("Jumlah Unit Rumah     : " + jumlahUnit);
         System.out.println("Blok Rumah Tersedia :" + blokRumah);
-        System.out.println("Status     : Tersedia");
+        System.out.println("Status     : " + getStatusRumah());
         cetakDataRumah();
     }
     
+    @Override 
+    public String getStatusRumah() {
+        return "Tersedia";
+    }
+    
+    @Override
+    public void survey() {
+        System.out.println("Dapat melakukan survey rumah unit " + getUnit() + " pada " + getBlokRumah());
+    }
 }

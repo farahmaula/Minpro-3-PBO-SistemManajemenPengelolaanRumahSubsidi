@@ -6,6 +6,7 @@ package main;
 
 import java.util.Scanner;
 import controller.ManajemenData;
+import controller.ValidasiInput;
 import view.SistemView;
 
 /**
@@ -17,6 +18,7 @@ public class Main {
         Scanner input = new Scanner(System.in);
         ManajemenData manajemen = new ManajemenData();
         SistemView view = new SistemView();
+        ValidasiInput validasi = new ValidasiInput();
         int pilihan;
 
             do {
@@ -27,7 +29,7 @@ public class Main {
                 System.out.println("4. Pengajuan Rumah Subsidi");
                 System.out.println("0. Keluar");
                 System.out.print("\nPilih menu: ");
-                pilihan = input.nextInt();
+                pilihan = validasi.bacaPilihan(input, 0, 4);
 
                 switch (pilihan) {
                     case 1:
