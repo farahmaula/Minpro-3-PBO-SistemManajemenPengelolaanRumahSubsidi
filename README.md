@@ -191,7 +191,8 @@ Pada sistem ini saya menerapkan method overriding dan overlioading pada inherita
 Gambar ini adalah method pada class rumah yang dilakukan override dan overloading pada subclass.
 <img width="1056" height="284" alt="image" src="https://github.com/user-attachments/assets/e15fdbfd-c400-4472-890e-331e0058246b" />
 Gambar diatas adalah penggunaan method override dan overloading yaitu "cetakDataRumah();" yang ada pada subclass rumah tersedia.
-<img width="1005" height="232" alt="image" src="https://github.com/user-attachments/assets/334b07a8-1665-4ff9-9440-68c4485a9f3b" />
+<img width="1081" height="303" alt="image" src="https://github.com/user-attachments/assets/ec983d5a-ae53-4b0a-b14a-17a99c0f1c1e" />
+
 Gambar diatas adalah penggunaan method override dan overloading yaitu "cetakDataRumah();" yang ada pada subclass rumah terjual.
 
 <img width="763" height="316" alt="image" src="https://github.com/user-attachments/assets/85e64eda-1d5c-494b-8089-6e76d0d6f87a" />
