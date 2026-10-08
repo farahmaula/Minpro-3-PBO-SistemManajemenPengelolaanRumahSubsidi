@@ -210,8 +210,6 @@ Pada sistem ini saya juga menerapkan abstract class dan juga beserta method yang
 Dibawah ini adalah hasil dari penggunaan abstract.
 <img width="807" height="268" alt="image" src="https://github.com/user-attachments/assets/aa8ee970-c101-43bd-ac10-b1e18f16428d" />
 
-<img width="471" height="137" alt="image" src="https://github.com/user-attachments/assets/227f39e1-d1c5-4c3f-8c03-4271da3fd48c" />
-
 
 # Penerapan Nilai Tambah (Interface)
 
