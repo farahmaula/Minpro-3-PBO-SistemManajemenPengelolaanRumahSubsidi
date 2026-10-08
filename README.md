@@ -203,7 +203,8 @@ ini adalah contoh outputnya dari penggunaan override dan overloading.
 Pada sistem ini saya juga menerapkan abstract class dan juga beserta method yang digunakan pada class rumah. Class Rumah dideklarasikan sebagai abstract class karena berfungsi sebagai class parents bagi RumahTersedia dan RumahTerjual. Class rumah menyimpan atribut dan method umum yang dimiliki oleh setiap rumah. Dengan adanya superclass tersebut, kedua subclass dapat menggunakan atribut dan method umum tanpa perlu menuliskannya kembali. Class rumah juga memiliki abstract method yaitu getStatusRumah() yang tidak memiliki implementasi langsung pada superclass. Method tersebut harus diimplementasikan oleh setiap subclass yang mewarisi class Rumah. Pada class RumahTersedia, method ini mengembalikan status "Tersedia", sedangkan pada class RumahTerjual mengembalikan status "Terjual". Dibawah ini adalah penerapan dari abstract.
 <img width="1055" height="171" alt="image" src="https://github.com/user-attachments/assets/d5f893df-46f1-4008-8425-e32b1af75c86" />
 
-<img width="862" height="98" alt="image" src="https://github.com/user-attachments/assets/6c6594d2-0c39-4027-a08d-0c2bd32754d8" />
+<img width="1060" height="544" alt="image" src="https://github.com/user-attachments/assets/fe15fe79-e48e-4af5-a376-405b87afbd51" />
+
 
 Dibawah ini adalah hasil dari penggunaan abstract.
 <img width="683" height="275" alt="image" src="https://github.com/user-attachments/assets/c22cc5e0-e93f-49d9-8d43-f5ac08dc8831" />
