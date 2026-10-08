@@ -222,10 +222,7 @@ Saya menerapkan interface pada sistem ini dengan menambah class dapatsurvey seba
 
 <img width="1363" height="184" alt="image" src="https://github.com/user-attachments/assets/fae25ec7-dcb4-4ec2-8b99-490fd4aafca9" />
 
-Pada struktur ini implements dapatsurvey menunjukkan penerapan interface. RumahTersedia tetap mewarisi atribut dan method dari class Rumah, sekaligus memiliki kemampuan untuk melakukan survey rumah.
-<img width="1443" height="195" alt="image" src="https://github.com/user-attachments/assets/483fa98d-4c9f-4aae-87cc-fd7656c4bf7c" />
-
-Gambar diatas adalah penggunaan method survey yang digunakan untuk menampilkan proses bahwa rumah yang tersedia sedang dilakukan survey.
+Pada struktur ini implements dapatsurvey menunjukkan penerapan interface. RumahTersedia tetap mewarisi atribut dan method dari class Rumah, sekaligus memiliki kemampuan untuk melakukan survey rumah. Gambar diatas juga menunjukkan penggunaan method survey yang digunakan untuk menampilkan proses bahwa rumah yang tersedia sedang dilakukan survey.
 <img width="936" height="335" alt="image" src="https://github.com/user-attachments/assets/0ff9069c-08b3-448b-9d03-41e0e0440cf1" />
 
-Ini adalah output dari penggunaan interface pada sistem ini.
+Ini adalah salah satu output dari penggunaan interface pada sistem ini.
