@@ -207,19 +207,24 @@ Pada sistem ini saya juga menerapkan abstract class dan juga beserta method yang
 
 
 Dibawah ini adalah hasil dari penggunaan abstract.
-<img width="683" height="275" alt="image" src="https://github.com/user-attachments/assets/c22cc5e0-e93f-49d9-8d43-f5ac08dc8831" />
+<img width="807" height="268" alt="image" src="https://github.com/user-attachments/assets/aa8ee970-c101-43bd-ac10-b1e18f16428d" />
+
 <img width="471" height="137" alt="image" src="https://github.com/user-attachments/assets/227f39e1-d1c5-4c3f-8c03-4271da3fd48c" />
 
 
 # Penerapan Nilai Tambah (Interface)
 
 Saya menerapkan interface pada sistem ini dengan menambah class dapatsurvey sebagai interface dan memberikan method atau kemampuan survey rumah pada class rumahtersedia. Dibawah ini adalah penerapan interface berdasarkan sistem yang saya buat.
-<img width="1053" height="330" alt="image" src="https://github.com/user-attachments/assets/c9203c82-955c-4466-a7be-eb9c093b6646" />
-<img width="1194" height="135" alt="image" src="https://github.com/user-attachments/assets/ad5d3831-bc7a-49a9-bee2-9bfd6b8edaee" />
+<img width="1307" height="116" alt="image" src="https://github.com/user-attachments/assets/d497ae54-c335-4418-b015-691bdac2d590" />
+
+<img width="1057" height="294" alt="image" src="https://github.com/user-attachments/assets/4127a17c-b6e5-4c91-8dac-4fe294ae14c5" />
+
+<img width="1363" height="184" alt="image" src="https://github.com/user-attachments/assets/fae25ec7-dcb4-4ec2-8b99-490fd4aafca9" />
+
 Pada struktur ini implements dapatsurvey menunjukkan penerapan interface. RumahTersedia tetap mewarisi atribut dan method dari class Rumah, sekaligus memiliki kemampuan untuk melakukan survey rumah.
 <img width="1443" height="195" alt="image" src="https://github.com/user-attachments/assets/483fa98d-4c9f-4aae-87cc-fd7656c4bf7c" />
 
 Gambar diatas adalah penggunaan method survey yang digunakan untuk menampilkan proses bahwa rumah yang tersedia sedang dilakukan survey.
-<img width="782" height="282" alt="image" src="https://github.com/user-attachments/assets/7e33e61c-e84e-44a3-acaf-77ccaffa0e06" />
+<img width="936" height="335" alt="image" src="https://github.com/user-attachments/assets/0ff9069c-08b3-448b-9d03-41e0e0440cf1" />
 
 Ini adalah output dari penggunaan interface pada sistem ini.
